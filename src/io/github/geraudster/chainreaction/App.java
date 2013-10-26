@@ -1,5 +1,7 @@
 package io.github.geraudster.chainreaction;
 
+import java.util.Observable;
+
 /**
  * Created with IntelliJ IDEA.
  * User: geraud
@@ -25,6 +27,17 @@ public class App {
     }
 
 
+    public class Board extends Observable {
+        private int nRow, nCol;
+        public void init(int nRow, int nCol) {
+            this.nRow = nRow;
+            this.nCol = nCol;
+        }
+
+        public Board(int nRow, int nCol){
+            init(nRow, nCol);
+        }
+    }
     public enum StatesEnum {
         IDLE(0), HIT(1), EXPLODED(2);
         private final int value;
